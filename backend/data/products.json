@@ -1,0 +1,445 @@
+[
+  {
+    "id": "iphone-16-pro-max",
+    "name": "iPhone 16 Pro Max",
+    "category": "iPhone",
+    "series": "16 Pro",
+    "tagline": "Hello, Apple Intelligence.",
+    "price": 144900,
+    "rating": 4.9,
+    "reviewCount": 1280,
+    "isNew": true,
+    "featured": true,
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-max-desert-titanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039",
+    "fallbackImage": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500' width='100%' height='100%'><rect width='400' height='500' fill='%230b0b0e' rx='30'/><rect x='110' y='40' width='180' height='380' rx='36' fill='%23bfa088' stroke='%23d4b69c' stroke-width='4'/><rect x='120' y='50' width='160' height='360' rx='28' fill='%23000'/><rect x='160' y='60' width='80' height='22' rx='11' fill='%231c1c1e'/><circle cx='180' cy='71' r='4' fill='%2300d2ff'/><text x='200' y='240' fill='%23bfa088' font-family='sans-serif' font-size='16' font-weight='bold' text-anchor='middle'>iPhone 16 Pro Max</text><text x='200' y='265' fill='%2386868b' font-family='sans-serif' font-size='12' text-anchor='middle'>Grade 5 Titanium</text></svg>",
+    "description": "Engineered for Apple Intelligence. Featuring a stunning Grade 5 Titanium design, a breakthrough 48MP Fusion camera system with 5x Telephoto, and the record-breaking A18 Pro chip.",
+    "storageOptions": [
+      { "size": "256GB", "price": 144900 },
+      { "size": "512GB", "price": 164900 },
+      { "size": "1TB", "price": 184900 }
+    ],
+    "colors": [
+      { "name": "Desert Titanium", "hex": "#bfa088", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-max-desert-titanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" },
+      { "name": "Natural Titanium", "hex": "#a3a199", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-max-natural-titanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" },
+      { "name": "White Titanium", "hex": "#f2f2f0", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-max-white-titanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" },
+      { "name": "Black Titanium", "hex": "#343434", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-max-black-titanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" }
+    ],
+    "specs": {
+      "display": "6.9\" Super Retina XDR ProMotion (120Hz)",
+      "chip": "A18 Pro with 6-core GPU",
+      "camera": "48MP Fusion + 48MP Ultra Wide + 12MP 5x Telephoto",
+      "battery": "Up to 33 hours video playback",
+      "weight": "227 grams",
+      "material": "Grade 5 Titanium with textured matte glass back",
+      "charging": "USB-C (USB 3 speeds up to 10Gb/s) & MagSafe 25W"
+    },
+    "features": [
+      "Apple Intelligence support built deep into iOS 18",
+      "Camera Control button with haptic feedback & touch gestures",
+      "4K 120 fps Dolby Vision video recording with studio-grade mics",
+      "Action Button for customizable quick shortcuts",
+      "Emergency SOS via satellite & Crash Detection"
+    ]
+  },
+  {
+    "id": "iphone-16-pro",
+    "name": "iPhone 16 Pro",
+    "category": "iPhone",
+    "series": "16 Pro",
+    "tagline": "Titanium. So strong. So light. So Pro.",
+    "price": 119900,
+    "rating": 4.8,
+    "reviewCount": 950,
+    "isNew": true,
+    "featured": true,
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-natural-titanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039",
+    "fallbackImage": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500' width='100%' height='100%'><rect width='400' height='500' fill='%230b0b0e' rx='30'/><rect x='120' y='50' width='160' height='340' rx='32' fill='%23a3a199' stroke='%23c2c0b8' stroke-width='4'/><rect x='128' y='58' width='144' height='324' rx='24' fill='%23000'/><rect x='165' y='66' width='70' height='20' rx='10' fill='%231c1c1e'/><text x='200' y='230' fill='%23a3a199' font-family='sans-serif' font-size='15' font-weight='bold' text-anchor='middle'>iPhone 16 Pro</text></svg>",
+    "description": "Pro power in a compact 6.3-inch design. Grade 5 Titanium chassis, A18 Pro chip, 48MP Ultra Wide camera, and Camera Control.",
+    "storageOptions": [
+      { "size": "128GB", "price": 119900 },
+      { "size": "256GB", "price": 129900 },
+      { "size": "512GB", "price": 149900 },
+      { "size": "1TB", "price": 169900 }
+    ],
+    "colors": [
+      { "name": "Desert Titanium", "hex": "#bfa088", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-desert-titanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" },
+      { "name": "Natural Titanium", "hex": "#a3a199", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-natural-titanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" },
+      { "name": "White Titanium", "hex": "#f2f2f0", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-white-titanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" },
+      { "name": "Black Titanium", "hex": "#343434", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pro-black-titanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" }
+    ],
+    "specs": {
+      "display": "6.3\" Super Retina XDR ProMotion (120Hz)",
+      "chip": "A18 Pro with 6-core GPU",
+      "camera": "48MP Fusion + 48MP Ultra Wide + 12MP 5x Telephoto",
+      "battery": "Up to 27 hours video playback",
+      "weight": "199 grams",
+      "material": "Grade 5 Titanium frame",
+      "charging": "USB-C & MagSafe 25W"
+    },
+    "features": [
+      "Apple Intelligence ready",
+      "Camera Control tactile button",
+      "4K 120 fps Dolby Vision capture",
+      "Dynamic Island interactive notifications",
+      "Always-On display with ProMotion"
+    ]
+  },
+  {
+    "id": "iphone-16",
+    "name": "iPhone 16",
+    "category": "iPhone",
+    "series": "16",
+    "tagline": "Full of power. Packed with color.",
+    "price": 79900,
+    "rating": 4.8,
+    "reviewCount": 1100,
+    "isNew": true,
+    "featured": true,
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-ultramarine-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039",
+    "fallbackImage": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500' width='100%' height='100%'><rect width='400' height='500' fill='%230b0b0e' rx='30'/><rect x='125' y='55' width='150' height='330' rx='30' fill='%233e56a7' stroke='%235b75ce' stroke-width='4'/><rect x='133' y='63' width='134' height='314' rx='22' fill='%23000'/><rect x='168' y='70' width='64' height='18' rx='9' fill='%231c1c1e'/><text x='200' y='225' fill='%233e56a7' font-family='sans-serif' font-size='15' font-weight='bold' text-anchor='middle'>iPhone 16</text></svg>",
+    "description": "Meet iPhone 16. Designed for Apple Intelligence with all-new A18 chip, Camera Control, 48MP Fusion camera, and Action button.",
+    "storageOptions": [
+      { "size": "128GB", "price": 79900 },
+      { "size": "256GB", "price": 89900 },
+      { "size": "512GB", "price": 109900 }
+    ],
+    "colors": [
+      { "name": "Ultramarine", "hex": "#3e56a7", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-ultramarine-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" },
+      { "name": "Teal", "hex": "#6b9e9b", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-teal-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" },
+      { "name": "Pink", "hex": "#e4adbb", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-pink-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" },
+      { "name": "White", "hex": "#fafafa", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-white-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" },
+      { "name": "Black", "hex": "#27282b", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-16-black-select?wid=940&hei=1112&fmt=png-alpha&.v=1723161048039" }
+    ],
+    "specs": {
+      "display": "6.1\" Super Retina XDR OLED",
+      "chip": "A18 chip with 5-core GPU",
+      "camera": "48MP Fusion + 12MP Ultra Wide with Macro photography",
+      "battery": "Up to 22 hours video playback",
+      "weight": "170 grams",
+      "material": "Aluminum enclosure with Ceramic Shield back",
+      "charging": "USB-C & MagSafe"
+    },
+    "features": [
+      "Apple Intelligence support",
+      "Camera Control sensor with multi-stage press",
+      "Action button for custom workflows",
+      "Dynamic Island for live activities",
+      "Super-high-resolution photos (24MP and 48MP)"
+    ]
+  },
+  {
+    "id": "macbook-pro-16-m3-max",
+    "name": "MacBook Pro 16\" (M3 Max)",
+    "category": "MacBook",
+    "series": "MacBook Pro",
+    "tagline": "Mind-blowing. Head-turning.",
+    "price": 349900,
+    "rating": 5.0,
+    "reviewCount": 740,
+    "isNew": true,
+    "featured": true,
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp16-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311054299",
+    "fallbackImage": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 350' width='100%' height='100%'><rect width='500' height='350' fill='%230b0b0e' rx='20'/><rect x='80' y='40' width='340' height='210' rx='12' fill='%231e1e20' stroke='%233a3a3c' stroke-width='4'/><rect x='90' y='50' width='320' height='190' rx='6' fill='%23000'/><rect x='40' y='250' width='420' height='18' rx='9' fill='%232c2c2e'/><path d='M 180 250 L 320 250 L 310 262 L 190 262 Z' fill='%231c1c1e'/><text x='250' y='145' fill='%2300d2ff' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle'>MacBook Pro 16\"</text><text x='250' y='175' fill='%2386868b' font-family='sans-serif' font-size='13' text-anchor='middle'>Apple M3 Max Chip</text></svg>",
+    "description": "The ultimate pro laptop. Powered by M3 Max with up to 16-core CPU, 40-core GPU, 128GB Unified Memory, and liquid Retina XDR display.",
+    "storageOptions": [
+      { "size": "1TB SSD", "price": 349900 },
+      { "size": "2TB SSD", "price": 389900 },
+      { "size": "4TB SSD", "price": 469900 }
+    ],
+    "colors": [
+      { "name": "Space Black", "hex": "#1e1e20", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp16-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311054299" },
+      { "name": "Silver", "hex": "#e2e3e5", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp16-silver-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311054299" }
+    ],
+    "specs": {
+      "display": "16.2\" Liquid Retina XDR (120Hz ProMotion)",
+      "chip": "Apple M3 Max (16-Core CPU, 40-Core GPU)",
+      "camera": "1080p FaceTime HD camera with Studio Mics",
+      "battery": "Up to 22 hours battery life",
+      "weight": "2.16 kg",
+      "material": "100% Recycled Aluminum Unibody Chassis",
+      "charging": "MagSafe 3 & 140W USB-C Power Adapter"
+    },
+    "features": [
+      "Hardware-accelerated Ray Tracing & Mesh Shading",
+      "Support for up to 4 external high-res monitors",
+      "Six-speaker sound system with Force-Cancelling Woofers",
+      "HDMI port supporting up to 8K resolution at 60Hz"
+    ]
+  },
+  {
+    "id": "macbook-air-15-m3",
+    "name": "MacBook Air 15\" (M3)",
+    "category": "MacBook",
+    "series": "MacBook Air",
+    "tagline": "Lean. Mean. M3 machine.",
+    "price": 134900,
+    "rating": 4.9,
+    "reviewCount": 1420,
+    "isNew": true,
+    "featured": true,
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba15-midnight-select-202402?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1707241774205",
+    "fallbackImage": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 350' width='100%' height='100%'><rect width='500' height='350' fill='%230b0b0e' rx='20'/><rect x='85' y='50' width='330' height='195' rx='10' fill='%231d232a' stroke='%2338424d' stroke-width='3'/><rect x='95' y='60' width='310' height='175' rx='4' fill='%23000'/><rect x='50' y='245' width='400' height='14' rx='7' fill='%232c2c2e'/><text x='250' y='145' fill='%234facfe' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle'>MacBook Air 15\"</text><text x='250' y='170' fill='%2386868b' font-family='sans-serif' font-size='13' text-anchor='middle'>Apple M3 Chip</text></svg>",
+    "description": "Impossibly thin and insanely fast. The 15-inch MacBook Air with M3 chip delivers up to 18 hours of battery life in a fanless silent design.",
+    "storageOptions": [
+      { "size": "256GB SSD", "price": 134900 },
+      { "size": "512GB SSD", "price": 154900 },
+      { "size": "1TB SSD", "price": 194900 }
+    ],
+    "colors": [
+      { "name": "Midnight", "hex": "#1d232a", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba15-midnight-select-202402?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1707241774205" },
+      { "name": "Starlight", "hex": "#f5f3ed", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba15-starlight-select-202402?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1707241774205" },
+      { "name": "Space Grey", "hex": "#7d7e80", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba15-spacegrey-select-202402?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1707241774205" },
+      { "name": "Silver", "hex": "#e2e3e5", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mba15-silver-select-202402?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1707241774205" }
+    ],
+    "specs": {
+      "display": "15.3\" Liquid Retina display with 500 nits brightness",
+      "chip": "Apple M3 (8-Core CPU, 10-Core GPU)",
+      "camera": "1080p FaceTime HD camera",
+      "battery": "Up to 18 hours battery life",
+      "weight": "1.51 kg",
+      "material": "Durable aluminum enclosure with anodized seal",
+      "charging": "MagSafe 3 charging port & dual Thunderbolt 4"
+    },
+    "features": [
+      "Supports two external displays when laptop lid is closed",
+      "Wi-Fi 6E for up to 2x faster wireless speeds",
+      "Four-speaker sound system with Spatial Audio",
+      "Fanless design for completely silent operation"
+    ]
+  },
+  {
+    "id": "macbook-pro-14-m3-pro",
+    "name": "MacBook Pro 14\" (M3 Pro)",
+    "category": "MacBook",
+    "series": "MacBook Pro",
+    "tagline": "Pro in every way.",
+    "price": 199900,
+    "rating": 4.9,
+    "reviewCount": 860,
+    "isNew": false,
+    "featured": false,
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311054299",
+    "fallbackImage": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 350' width='100%' height='100%'><rect width='500' height='350' fill='%230b0b0e' rx='20'/><rect x='95' y='55' width='310' height='185' rx='10' fill='%231e1e20' stroke='%233a3a3c' stroke-width='3'/><rect x='105' y='65' width='290' height='165' rx='4' fill='%23000'/><rect x='60' y='240' width='380' height='14' rx='7' fill='%232c2c2e'/><text x='250' y='145' fill='%23a1a1a6' font-family='sans-serif' font-size='16' font-weight='bold' text-anchor='middle'>MacBook Pro 14\"</text></svg>",
+    "description": "Compact powerhouse. High-contrast Liquid Retina XDR display, M3 Pro chip, and full set of pro ports including SDXC card slot.",
+    "storageOptions": [
+      { "size": "512GB SSD", "price": 199900 },
+      { "size": "1TB SSD", "price": 219900 }
+    ],
+    "colors": [
+      { "name": "Space Black", "hex": "#1e1e20", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-spaceblack-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311054299" },
+      { "name": "Silver", "hex": "#e2e3e5", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp14-silver-select-202310?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1697311054299" }
+    ],
+    "specs": {
+      "display": "14.2\" Liquid Retina XDR (120Hz ProMotion)",
+      "chip": "Apple M3 Pro (12-Core CPU, 18-Core GPU)",
+      "camera": "1080p FaceTime HD camera",
+      "battery": "Up to 18 hours battery life",
+      "weight": "1.61 kg",
+      "material": "Solid aluminum unibody",
+      "charging": "MagSafe 3 & 70W or 96W USB-C Power Adapter"
+    },
+    "features": [
+      "Liquid Retina XDR display with 1600 nits peak HDR brightness",
+      "SDXC card slot, HDMI port, and 3.5mm headphone jack",
+      "Touch ID fingerprint sensor built into Power Key"
+    ]
+  },
+  {
+    "id": "iphone-15-pro-max",
+    "name": "iPhone 15 Pro Max",
+    "category": "iPhone",
+    "series": "15 Pro",
+    "tagline": "Titanium power. Unmatched zoom.",
+    "price": 134900,
+    "rating": 4.8,
+    "reviewCount": 2400,
+    "isNew": false,
+    "featured": false,
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-max-naturaltitanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1692875660601",
+    "fallbackImage": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500' width='100%' height='100%'><rect width='400' height='500' fill='%230b0b0e' rx='30'/><rect x='120' y='50' width='160' height='340' rx='32' fill='%23a3a199' stroke='%23c2c0b8' stroke-width='4'/><rect x='128' y='58' width='144' height='324' rx='24' fill='%23000'/><text x='200' y='230' fill='%23a3a199' font-family='sans-serif' font-size='15' font-weight='bold' text-anchor='middle'>iPhone 15 Pro Max</text></svg>",
+    "description": "Forged in titanium. Features the game-changing A17 Pro chip, 5x optical zoom camera, customizable Action button, and lightweight frame.",
+    "storageOptions": [
+      { "size": "256GB", "price": 134900 },
+      { "size": "512GB", "price": 154900 },
+      { "size": "1TB", "price": 174900 }
+    ],
+    "colors": [
+      { "name": "Natural Titanium", "hex": "#a3a199", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-max-naturaltitanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1692875660601" },
+      { "name": "Blue Titanium", "hex": "#2c3847", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-max-bluetitanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1692875660601" },
+      { "name": "White Titanium", "hex": "#f2f2f0", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-max-whitetitanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1692875660601" },
+      { "name": "Black Titanium", "hex": "#343434", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-15-pro-max-blacktitanium-select?wid=940&hei=1112&fmt=png-alpha&.v=1692875660601" }
+    ],
+    "specs": {
+      "display": "6.7\" Super Retina XDR ProMotion",
+      "chip": "A17 Pro chip with 6-core GPU",
+      "camera": "48MP Main + 12MP Ultra Wide + 12MP 5x Telephoto",
+      "battery": "Up to 29 hours video playback",
+      "weight": "221 grams",
+      "material": "Titanium design",
+      "charging": "USB-C (USB 3 speeds)"
+    },
+    "features": [
+      "A17 Pro chip for console-level mobile gaming",
+      "5x Telephoto optical zoom camera",
+      "Action Button for fast triggers",
+      "USB 3 transfer speeds up to 10Gbps"
+    ]
+  },
+  {
+    "id": "iphone-se-3rd-gen",
+    "name": "iPhone SE (3rd Gen)",
+    "category": "iPhone",
+    "series": "SE",
+    "tagline": "Love the power. Love the price.",
+    "price": 47600,
+    "rating": 4.5,
+    "reviewCount": 890,
+    "isNew": false,
+    "featured": false,
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-se-midnight-select-202203?wid=940&hei=1112&fmt=png-alpha&.v=1646072165949",
+    "fallbackImage": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500' width='100%' height='100%'><rect width='400' height='500' fill='%230b0b0e' rx='30'/><rect x='130' y='60' width='140' height='310' rx='24' fill='%231d232a' stroke='%2338424d' stroke-width='3'/><rect x='138' y='76' width='124' height='278' rx='16' fill='%23000'/><circle cx='200' cy='365' r='12' fill='%231c1c1e' stroke='%2386868b'/><text x='200' y='210' fill='%2386868b' font-family='sans-serif' font-size='14' font-weight='bold' text-anchor='middle'>iPhone SE</text></svg>",
+    "description": "Lightning-fast A15 Bionic chip, 5G capabilities, extended battery life, and a classic 4.7-inch compact design with Touch ID home button.",
+    "storageOptions": [
+      { "size": "64GB", "price": 47600 },
+      { "size": "128GB", "price": 52600 },
+      { "size": "256GB", "price": 62600 }
+    ],
+    "colors": [
+      { "name": "Midnight", "hex": "#1d232a", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-se-midnight-select-202203?wid=940&hei=1112&fmt=png-alpha&.v=1646072165949" },
+      { "name": "Starlight", "hex": "#f5f3ed", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-se-starlight-select-202203?wid=940&hei=1112&fmt=png-alpha&.v=1646072165949" },
+      { "name": "(PRODUCT)RED", "hex": "#bf0d25", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-se-red-select-202203?wid=940&hei=1112&fmt=png-alpha&.v=1646072165949" }
+    ],
+    "specs": {
+      "display": "4.7\" Retina HD display",
+      "chip": "A15 Bionic chip",
+      "camera": "12MP Wide camera with Smart HDR 4",
+      "battery": "Up to 15 hours video playback",
+      "weight": "144 grams",
+      "material": "Glass and aluminum design",
+      "charging": "Lightning & Qi wireless"
+    },
+    "features": [
+      "Compact iconic design with Home button & Touch ID",
+      "A15 Bionic chip performance",
+      "5G cellular speeds",
+      "IP67 water resistance"
+    ]
+  },
+  {
+    "id": "ipad-pro-13-m4",
+    "name": "iPad Pro 13\" (M4)",
+    "category": "iPad",
+    "series": "iPad Pro",
+    "tagline": "Thinpossible. Game-changing M4 power.",
+    "price": 129900,
+    "rating": 5.0,
+    "reviewCount": 620,
+    "isNew": true,
+    "featured": true,
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-13-select-wifi-spaceblack-202405?wid=940&hei=1112&fmt=png-alpha&.v=1713308940000",
+    "fallbackImage": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 350' width='100%' height='100%'><rect width='500' height='350' fill='%230b0b0e' rx='20'/><rect x='100' y='40' width='300' height='220' rx='16' fill='%231c1c1e' stroke='%233a3a3c' stroke-width='4'/><text x='250' y='160' fill='%2300d2ff' font-family='sans-serif' font-size='18' font-weight='bold' text-anchor='middle'>iPad Pro 13\" M4</text></svg>",
+    "description": "The thinnest Apple product ever. Ultra Retina XDR Tandem OLED display, revolutionary M4 chip with 38 TOPS Neural Engine for AI.",
+    "storageOptions": [
+      { "size": "256GB", "price": 129900 },
+      { "size": "512GB", "price": 149900 },
+      { "size": "1TB", "price": 189900 }
+    ],
+    "colors": [
+      { "name": "Space Black", "hex": "#1e1e20", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-13-select-wifi-spaceblack-202405?wid=940&hei=1112&fmt=png-alpha&.v=1713308940000" },
+      { "name": "Silver", "hex": "#e2e3e5", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/ipad-pro-13-select-wifi-silver-202405?wid=940&hei=1112&fmt=png-alpha&.v=1713308940000" }
+    ],
+    "specs": {
+      "display": "13\" Ultra Retina XDR Tandem OLED (120Hz ProMotion)",
+      "chip": "Apple M4 (9-core CPU, 10-core GPU)",
+      "camera": "12MP Wide camera with LiDAR Scanner",
+      "battery": "Up to 10 hours web surfing",
+      "weight": "579 grams",
+      "material": "100% Recycled Aluminum",
+      "charging": "USB-C (Thunderbolt 4 / USB 4)"
+    },
+    "features": [
+      "Thinnest Apple product ever at just 5.1mm",
+      "Tandem OLED display with 1600 nits peak HDR brightness",
+      "Apple Pencil Pro support with barrel roll & haptics",
+      "Smart Folio & Magic Keyboard support"
+    ]
+  },
+  {
+    "id": "apple-watch-ultra-2",
+    "name": "Apple Watch Ultra 2",
+    "category": "Watch",
+    "series": "Ultra",
+    "tagline": "Next-level adventure. Now in Black Titanium.",
+    "price": 89900,
+    "rating": 4.9,
+    "reviewCount": 1050,
+    "isNew": true,
+    "featured": true,
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/s10-ultra2-select-202409?wid=940&hei=1112&fmt=png-alpha&.v=1724440000000",
+    "fallbackImage": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' width='100%' height='100%'><rect width='400' height='400' fill='%230b0b0e' rx='30'/><circle cx='200' cy='200' r='100' fill='%231c1c1e' stroke='%23ff6a00' stroke-width='6'/><text x='200' y='205' fill='%23ff6a00' font-family='sans-serif' font-size='14' font-weight='bold' text-anchor='middle'>Apple Watch Ultra 2</text></svg>",
+    "description": "The ultimate sports and adventure watch. Grade 5 Black Titanium case, 3000 nits display, Dual-frequency GPS, and up to 72 hours battery in Low Power Mode.",
+    "storageOptions": [
+      { "size": "64GB GPS + Cellular", "price": 89900 }
+    ],
+    "colors": [
+      { "name": "Black Titanium", "hex": "#1c1c1e", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/s10-ultra2-select-202409?wid=940&hei=1112&fmt=png-alpha&.v=1724440000000" },
+      { "name": "Natural Titanium", "hex": "#a3a199", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/s10-ultra2-select-202409?wid=940&hei=1112&fmt=png-alpha&.v=1724440000000" }
+    ],
+    "specs": {
+      "display": "49mm Sapphire Crystal Display (3000 nits)",
+      "chip": "S9 SiP with 4-core Neural Engine",
+      "camera": "Dual Speakers & 3-Microphone Array",
+      "battery": "Up to 36 hours normal / 72 hours Low Power",
+      "weight": "61.4 grams",
+      "material": "Grade 5 Titanium case & Ceramic back",
+      "charging": "Magnetic Fast Charger to USB-C"
+    },
+    "features": [
+      "Precision Dual-Frequency GPS (L1 and L5)",
+      "100m Water Resistance & EN13319 Scuba Dive Certified",
+      "Double Tap gesture for one-handed controls",
+      "ECG app & Blood Oxygen sensor"
+    ]
+  },
+  {
+    "id": "airpods-max-usbc",
+    "name": "AirPods Max (USB-C)",
+    "category": "AirPods",
+    "series": "Max",
+    "tagline": "Symphonic audio. Pure luxury.",
+    "price": 59900,
+    "rating": 4.8,
+    "reviewCount": 820,
+    "isNew": true,
+    "featured": true,
+    "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max-select-midnight-202409?wid=940&hei=1112&fmt=png-alpha&.v=1724440000000",
+    "fallbackImage": "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400' width='100%' height='100%'><rect width='400' height='400' fill='%230b0b0e' rx='30'/><circle cx='140' cy='220' r='50' fill='%231c1c1e' stroke='%2300d2ff' stroke-width='4'/><circle cx='260' cy='220' r='50' fill='%231c1c1e' stroke='%2300d2ff' stroke-width='4'/><path d='M 140 170 Q 200 100 260 170' stroke='%2300d2ff' stroke-width='8' fill='none'/><text x='200' y='320' fill='%2300d2ff' font-family='sans-serif' font-size='14' font-weight='bold' text-anchor='middle'>AirPods Max</text></svg>",
+    "description": "Over-ear luxury headphones with Pro-level Active Noise Cancellation, Personalized Spatial Audio, Lossless Audio via USB-C, and knit mesh canopy.",
+    "storageOptions": [
+      { "size": "Standard", "price": 59900 }
+    ],
+    "colors": [
+      { "name": "Midnight", "hex": "#1d232a", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max-select-midnight-202409?wid=940&hei=1112&fmt=png-alpha&.v=1724440000000" },
+      { "name": "Starlight", "hex": "#f5f3ed", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max-select-starlight-202409?wid=940&hei=1112&fmt=png-alpha&.v=1724440000000" },
+      { "name": "Blue", "hex": "#3e56a7", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max-select-blue-202409?wid=940&hei=1112&fmt=png-alpha&.v=1724440000000" },
+      { "name": "Orange", "hex": "#d35400", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max-select-orange-202409?wid=940&hei=1112&fmt=png-alpha&.v=1724440000000" },
+      { "name": "Purple", "hex": "#8e44ad", "image": "https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/airpods-max-select-purple-202409?wid=940&hei=1112&fmt=png-alpha&.v=1724440000000" }
+    ],
+    "specs": {
+      "display": "Custom Dynamic Driver with H1 Chip per ear cup",
+      "chip": "Apple H1 headphone chip (x2)",
+      "camera": "9 microphones for ANC & spatial audio",
+      "battery": "Up to 20 hours listening time",
+      "weight": "384.8 grams",
+      "material": "Stainless steel frame with breathable mesh canopy",
+      "charging": "USB-C Fast Charging (5 mins = 1.5 hrs playback)"
+    },
+    "features": [
+      "Pro-level Active Noise Cancellation with Transparency mode",
+      "Personalized Spatial Audio with dynamic head tracking",
+      "Digital Crown for volume, track skipping & Siri control",
+      "Lossless Audio playback via USB-C connection"
+    ]
+  }
+]
+

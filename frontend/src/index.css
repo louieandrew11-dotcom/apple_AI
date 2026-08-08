@@ -1,0 +1,194 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Apple Custom Glassmorphism Effects */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.dark .glass-nav {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.04);
+}
+
+.dark .glass-card {
+  background: rgba(28, 28, 30, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Apple Pro Metallic Text Gradient */
+.text-titanium {
+  background: linear-gradient(135deg, #f5f5f7 0%, #86868b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gold-titanium {
+  background: linear-gradient(135deg, #e3c4a8 0%, #b38b6d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-apple-gradient {
+  background: linear-gradient(135deg, #0071e3 0%, #40a9ff 50%, #9254de 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Siri Orb Animation Styling */
+.siri-orb {
+  position: relative;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #00f2fe 0%, #4facfe 35%, #0071e3 60%, #7f00ff 85%, #ff007f 100%);
+  background-size: 200% 200%;
+  animation: siriWave 5s ease infinite alternate;
+  box-shadow: 0 0 25px rgba(0, 210, 255, 0.6), 0 0 50px rgba(127, 0, 255, 0.4);
+}
+
+@keyframes siriWave {
+  0% {
+    background-position: 0% 50%;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    background-position: 100% 50%;
+    transform: scale(1.05) rotate(180deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+/* Siri Waveform Bars */
+.siri-bar {
+  background: linear-gradient(180deg, #00f2fe 0%, #7f00ff 100%);
+  border-radius: 4px;
+  animation: barBounce 1.2s ease-in-out infinite alternate;
+}
+
+@keyframes barBounce {
+  0% { transform: scaleY(0.3); }
+  100% { transform: scaleY(1); }
+}
+
+/* Center Siri AI Glowing Hero Button */
+.siri-hero-button {
+  position: relative;
+  background: rgba(15, 15, 25, 0.75);
+  backdrop-filter: blur(20px) saturate(200%);
+  -webkit-backdrop-filter: blur(20px) saturate(200%);
+  border: 1px solid rgba(0, 210, 255, 0.4);
+  box-shadow: 0 0 30px rgba(0, 210, 255, 0.35), 0 0 60px rgba(127, 0, 255, 0.25), inset 0 0 15px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.siri-hero-button:hover {
+  border-color: rgba(0, 210, 255, 0.8);
+  box-shadow: 0 0 45px rgba(0, 210, 255, 0.6), 0 0 90px rgba(255, 0, 127, 0.4), inset 0 0 25px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px) scale(1.03);
+}
+
+/* Expanding Pulse Ring for Center Button */
+.siri-pulse-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  background: conic-gradient(from 0deg, #00f2fe, #7f00ff, #ff007f, #00f2fe);
+  opacity: 0.7;
+  filter: blur(12px);
+  animation: rotateConic 4s linear infinite;
+  z-index: -1;
+}
+
+@keyframes rotateConic {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(134, 134, 139, 0.3);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(134, 134, 139, 0.6);
+}
+
+/* Leaflet Map Custom Styling */
+.leaflet-container {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  background-color: #121214 !important;
+  border-radius: 1.5rem;
+}
+
+.leaflet-popup-content-wrapper {
+  background: rgba(28, 28, 30, 0.95) !important;
+  color: #f5f5f7 !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 1rem !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  padding: 4px !important;
+}
+
+.leaflet-popup-tip {
+  background: rgba(28, 28, 30, 0.95) !important;
+}
+
+.custom-apple-pin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #0071e3 0%, #00f2fe 100%);
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(0, 113, 227, 0.8), 0 0 30px rgba(0, 242, 254, 0.4);
+  border: 2px solid white;
+  transition: transform 0.3s ease;
+}
+
+.custom-apple-pin:hover {
+  transform: scale(1.2) translateY(-4px);
+}
+
+
