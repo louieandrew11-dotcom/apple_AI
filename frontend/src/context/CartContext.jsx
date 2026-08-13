@@ -15,11 +15,16 @@ export const CartProvider = ({ children }) => {
   }, [cart]);
 
   const addToCart = (product, selectedColor, selectedStorage) => {
-    const colorObj = selectedColor || (product.colors && product.colors[0]);
-    const storageObj = selectedStorage || (product.storageOptions && product.storageOptions[0]);
+    const defaultColor = (product.colors && product.colors.length > 0) ? product.colors[0] : { name: 'Standard Titanium', hex: '#343434', image: product.image };
+    const defaultStorage = (product.storageOptions && product.storageOptions.length > 0) ? product.storageOptions[0] : { size: '128GB', price: product.price || 0 };
 
-    const itemPrice = storageObj ? storageObj.price : product.price;
-    const cartItemId = `${product.id}-${colorObj.name}-${storageObj.size}`;
+    const colorObj = selectedColor || defaultColor;
+    const storageObj = selectedStorage || defaultStorage;
+
+    const itemPrice = storageObj.price || product.price || 0;
+    const colorName = colorObj.name || 'Standard';
+    const storageSize = storageObj.size || 'Standard';
+    const cartItemId = `${product.id}-${colorName}-${storageSize}`;
 
     setCart(prevCart => {
       const existingIndex = prevCart.findIndex(item => item.cartItemId === cartItemId);
@@ -35,9 +40,9 @@ export const CartProvider = ({ children }) => {
             id: product.id,
             name: product.name,
             image: colorObj.image || product.image,
-            color: colorObj.name,
-            hex: colorObj.hex,
-            storage: storageObj.size,
+            color: colorName,
+            hex: colorObj.hex || '#343434',
+            storage: storageSize,
             price: itemPrice,
             quantity: 1,
           }
@@ -45,7 +50,7 @@ export const CartProvider = ({ children }) => {
       }
     });
 
-    showToast(`Added ${product.name} (${storageObj.size}) to Bag`);
+    showToast(`Added ${product.name} (${storageSize}) to Bag`);
   };
 
   const removeFromCart = (cartItemId) => {

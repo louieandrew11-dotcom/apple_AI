@@ -8,8 +8,12 @@ export const ProductCard = ({ product, onQuickView }) => {
   const { addToCart } = useCart();
   const { wishlist, toggleWishlist } = useWishlist();
 
-  const [selectedColor, setSelectedColor] = useState(product.colors ? product.colors[0] : null);
-  const [selectedStorage, setSelectedStorage] = useState(product.storageOptions ? product.storageOptions[0] : null);
+  const [selectedColor, setSelectedColor] = useState(
+    product.colors && product.colors.length > 0 ? product.colors[0] : null
+  );
+  const [selectedStorage, setSelectedStorage] = useState(
+    product.storageOptions && product.storageOptions.length > 0 ? product.storageOptions[0] : null
+  );
 
   const isLiked = wishlist.some(item => item.id === product.id);
   const displayPrice = selectedStorage ? selectedStorage.price : product.price;

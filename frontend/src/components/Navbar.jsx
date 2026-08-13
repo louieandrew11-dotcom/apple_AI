@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import { Link, useLocation } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import { useCart } from '../context/CartContext';
@@ -287,39 +288,42 @@ export const Navbar = ({ onOpenSearch }) => {
       </AnimatePresence>
 
       {/* 1-MINUTE AI GOOGLE & GROQ NEWS ANALYSIS POPUP BANNER */}
-      <AnimatePresence>
-        {showNewsBanner && (
-          <motion.div
-            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 50, scale: 0.9 }}
-            className="fixed bottom-6 right-6 z-50 max-w-sm sm:max-w-md bg-[#1c1c1e] text-white p-5 rounded-3xl border border-cyan-500/40 shadow-2xl space-y-3"
-          >
-            <div className="flex items-center justify-between border-b border-white/10 pb-2">
-              <div className="flex items-center space-x-2">
-                <Sparkles size={16} className="text-cyan-400 animate-spin" />
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-cyan-400">
-                  {aiNewsItems[currentNewsIdx].badge} (1-Min AI Live News)
-                </span>
+      {createPortal(
+        <AnimatePresence>
+          {showNewsBanner && (
+            <motion.div
+              initial={{ opacity: 0, y: 50, scale: 0.9 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: 50, scale: 0.9 }}
+              className="fixed bottom-6 right-6 z-50 max-w-sm sm:max-w-md bg-[#1c1c1e] text-white p-5 rounded-3xl border border-cyan-500/40 shadow-2xl space-y-3"
+            >
+              <div className="flex items-center justify-between border-b border-white/10 pb-2">
+                <div className="flex items-center space-x-2">
+                  <Sparkles size={16} className="text-cyan-400 animate-spin" />
+                  <span className="text-[10px] font-extrabold uppercase tracking-wider text-cyan-400">
+                    {aiNewsItems[currentNewsIdx].badge} (1-Min AI Live News)
+                  </span>
+                </div>
+                <button onClick={() => setShowNewsBanner(false)} className="text-gray-400 hover:text-white text-xs">✕</button>
               </div>
-              <button onClick={() => setShowNewsBanner(false)} className="text-gray-400 hover:text-white text-xs">✕</button>
-            </div>
 
-            <h4 className="text-xs font-bold text-white">{aiNewsItems[currentNewsIdx].title}</h4>
-            <p className="text-xs text-gray-300 leading-relaxed">{aiNewsItems[currentNewsIdx].text}</p>
+              <h4 className="text-xs font-bold text-white">{aiNewsItems[currentNewsIdx].title}</h4>
+              <p className="text-xs text-gray-300 leading-relaxed">{aiNewsItems[currentNewsIdx].text}</p>
 
-            <div className="flex items-center justify-between pt-1">
-              <span className="text-[9px] text-gray-500 font-mono">Updated via Google & Groq AI</span>
-              <button
-                onClick={() => setShowNewsBanner(false)}
-                className="px-3 py-1 bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-[10px] rounded-lg transition-colors"
-              >
-                Dismiss News
-              </button>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              <div className="flex items-center justify-between pt-1">
+                <span className="text-[9px] text-gray-500 font-mono">Updated via Google & Groq AI</span>
+                <button
+                  onClick={() => setShowNewsBanner(false)}
+                  className="px-3 py-1 bg-cyan-600 hover:bg-cyan-700 text-white font-bold text-[10px] rounded-lg transition-colors"
+                >
+                  Dismiss News
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>,
+        document.body
+      )}
     </header>
   );
 };

@@ -8,8 +8,12 @@ export const ProductModal = ({ product, onClose }) => {
   const { addToCart } = useCart();
   const { wishlist, toggleWishlist } = useWishlist();
 
-  const [selectedColor, setSelectedColor] = useState(product.colors ? product.colors[0] : null);
-  const [selectedStorage, setSelectedStorage] = useState(product.storageOptions ? product.storageOptions[0] : null);
+  const [selectedColor, setSelectedColor] = useState(
+    product && product.colors && product.colors.length > 0 ? product.colors[0] : null
+  );
+  const [selectedStorage, setSelectedStorage] = useState(
+    product && product.storageOptions && product.storageOptions.length > 0 ? product.storageOptions[0] : null
+  );
 
   if (!product) return null;
 

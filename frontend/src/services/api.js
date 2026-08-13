@@ -125,9 +125,15 @@ export const adminLogin = async (credentials) => {
 };
 
 export const fetchAdminProducts = async () => {
-  const res = await fetch(`${API_BASE}/admin/products`);
-  const data = await res.json();
-  return data.products || [];
+  try {
+    const res = await fetch(`${API_BASE}/admin/products`);
+    if (!res.ok) throw new Error('Failed to fetch admin products');
+    const data = await res.json();
+    return data.products || [];
+  } catch (err) {
+    console.error('Error fetching admin products:', err);
+    return [];
+  }
 };
 
 export const addAdminProduct = async (productData) => {
@@ -151,9 +157,15 @@ export const deleteAdminProduct = async (id) => {
 };
 
 export const fetchAdminStaff = async () => {
-  const res = await fetch(`${API_BASE}/admin/staff`);
-  const data = await res.json();
-  return data.staff || [];
+  try {
+    const res = await fetch(`${API_BASE}/admin/staff`);
+    if (!res.ok) throw new Error('Failed to fetch staff roster');
+    const data = await res.json();
+    return data.staff || [];
+  } catch (err) {
+    console.error('Error fetching admin staff:', err);
+    return [];
+  }
 };
 
 export const addAdminStaff = async (staffData) => {
@@ -174,25 +186,44 @@ export const updateAdminStaffStatus = async (id, status) => {
     body: JSON.stringify({ id, status }),
   });
   const data = await res.json();
+  if (!res.ok) throw new Error(data.message || 'Failed to update staff status');
   return data;
 };
 
 export const fetchAdminPayments = async () => {
-  const res = await fetch(`${API_BASE}/admin/payments`);
-  const data = await res.json();
-  return data.payments || [];
+  try {
+    const res = await fetch(`${API_BASE}/admin/payments`);
+    if (!res.ok) throw new Error('Failed to fetch payment logs');
+    const data = await res.json();
+    return data.payments || [];
+  } catch (err) {
+    console.error('Error fetching admin payments:', err);
+    return [];
+  }
 };
 
 export const fetchAdminLogs = async () => {
-  const res = await fetch(`${API_BASE}/admin/logs`);
-  const data = await res.json();
-  return data;
+  try {
+    const res = await fetch(`${API_BASE}/admin/logs`);
+    if (!res.ok) throw new Error('Failed to fetch admin logs');
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error('Error fetching admin logs:', err);
+    return { adminLogs: [], supportInquiries: [] };
+  }
 };
 
 export const fetchProductReviews = async () => {
-  const res = await fetch(`${API_BASE}/reviews`);
-  const data = await res.json();
-  return data.reviews || [];
+  try {
+    const res = await fetch(`${API_BASE}/reviews`);
+    if (!res.ok) throw new Error('Failed to fetch product reviews');
+    const data = await res.json();
+    return data.reviews || [];
+  } catch (err) {
+    console.error('Error fetching product reviews:', err);
+    return [];
+  }
 };
 
 export const submitProductReview = async (reviewData) => {
@@ -216,9 +247,15 @@ export const deleteProductReview = async (id) => {
 };
 
 export const fetchOwnerProfile = async () => {
-  const res = await fetch(`${API_BASE}/admin/profile`);
-  const data = await res.json();
-  return data.profile || {};
+  try {
+    const res = await fetch(`${API_BASE}/admin/profile`);
+    if (!res.ok) throw new Error('Failed to fetch owner profile');
+    const data = await res.json();
+    return data.profile || {};
+  } catch (err) {
+    console.error('Error fetching owner profile:', err);
+    return {};
+  }
 };
 
 export const updateOwnerProfile = async (profileData) => {
@@ -233,9 +270,15 @@ export const updateOwnerProfile = async (profileData) => {
 };
 
 export const fetchChatThreads = async () => {
-  const res = await fetch(`${API_BASE}/chat/threads`);
-  const data = await res.json();
-  return data.threads || [];
+  try {
+    const res = await fetch(`${API_BASE}/chat/threads`);
+    if (!res.ok) throw new Error('Failed to fetch chat threads');
+    const data = await res.json();
+    return data.threads || [];
+  } catch (err) {
+    console.error('Error fetching chat threads:', err);
+    return [];
+  }
 };
 
 export const sendChatReply = async (threadId, text, staffName) => {

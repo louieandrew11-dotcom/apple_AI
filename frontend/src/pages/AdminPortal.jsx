@@ -156,7 +156,8 @@ export const AdminPortal = () => {
   const handleAddProductSubmit = async (e) => {
     e.preventDefault();
     try {
-      await addAdminProduct({ ...newProduct, price: parseInt(newProduct.price) });
+      const parsedPrice = parseInt(newProduct.price) || 0;
+      await addAdminProduct({ ...newProduct, price: parsedPrice });
       setShowAddProductModal(false);
       setNewProduct({ name: '', category: 'iPhone', price: '', image: '', description: '' });
       showToast("Added new catalog product successfully!");
@@ -1663,14 +1664,14 @@ export const AdminPortal = () => {
                 className="space-y-4 text-xs"
               >
                 <div>
-                  <label className="text-gray-300 block mb-1 font-semibold">MongoDB Atlas Password for 'louieandrew11'</label>
+                  <label className="text-gray-300 block mb-1 font-semibold">MongoDB Password OR Full Connection String</label>
                   <input
-                    type="password"
+                    type="text"
                     required
                     value={mongoPassword}
                     onChange={(e) => setMongoPassword(e.target.value)}
-                    placeholder="Enter your MongoDB Atlas cluster password..."
-                    className="w-full bg-[#2c2c2e] text-white rounded-xl px-3.5 py-2.5 border border-white/10 focus:ring-2 focus:ring-emerald-400"
+                    placeholder="Paste password or mongodb+srv://... connection string"
+                    className="w-full bg-[#2c2c2e] text-white text-xs rounded-xl px-3.5 py-2.5 border border-white/10 focus:ring-2 focus:ring-emerald-400 font-mono"
                   />
                 </div>
 
