@@ -579,7 +579,7 @@ def admin_login():
     log_admin_action("Failed Login Attempt", f"Invalid credentials supplied for username: '{username}'")
     return jsonify({"status": "error", "message": "Invalid Username or Password."}), 401
 
-@app.route('/api/admin/products', methods=['GET', 'POST', 'DELETE'])
+@app.route('/api/admin/products', methods=['GET', 'POST', 'PUT', 'DELETE'])
 def admin_products():
     """Manages products in store catalog (Get list, Add item, Delete item)."""
     global PRODUCTS_DATA
@@ -674,6 +674,56 @@ def admin_products():
 
         log_admin_action("Deleted Product", f"Removed product ID '{product_id}' from catalog")
         return jsonify({"status": "success", "message": f"Deleted product {product_id}"})
+
+    if request.method == 'PUT':
+        data = request.get_json() or {}
+        product_id = data.get('id', '').strip()
+        
+        if not product_id:
+            return jsonify({"status": "error", "message": "Product ID is required for update."}), 400
+            
+        name = data.get('name', '').strip()
+        price = data.get('price')
+        
+        if not name or price is None:
+            return jsonify({"status": "error", "message": "Product Name and Price are required."}), 400
+            
+        updated_item = None
+        for i, p in enumerate(PRODUCTS_DATA):
+            if p['id'] == product_id:
+                PRODUCTS_DATA[i]['name'] = name
+                PRODUCTS_DATA[i]['category'] = data.get('category', p.get('category'))
+                PRODUCTS_DATA[i]['price'] = int(price)
+                PRODUCTS_DATA[i]['image'] = data.get('image', p.get('image'))
+                PRODUCTS_DATA[i]['description'] = data.get('description', p.get('description'))
+                updated_item = PRODUCTS_DATA[i]
+                break
+                
+        if not updated_item:
+            return jsonify({"status": "error", "message": "Product not found."}), 404
+
+        try:
+            with open(PRODUCTS_FILE, 'w', encoding='utf-8') as f:
+                json.dump(PRODUCTS_DATA, f, indent=2)
+        except Exception as e:
+            print(f"Error saving to products.json: {e}")
+
+        db = get_mongo_db()
+        if db is not None:
+            try:
+                db['products'].update_one(
+                    {"id": product_id},
+                    {"$set": updated_item}
+                )
+            except Exception as e:
+                print(f"Error updating product in MongoDB: {e}")
+
+        log_admin_action("Updated Product", f"Updated details for '{name}' (ID: {product_id})")
+        return jsonify({
+            "status": "success",
+            "message": f"Successfully updated '{name}'!",
+            "product": updated_item
+        })
 
 @app.route('/api/admin/staff', methods=['GET', 'POST', 'PUT'])
 def admin_staff():

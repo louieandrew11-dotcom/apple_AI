@@ -147,6 +147,17 @@ export const addAdminProduct = async (productData) => {
   return data;
 };
 
+export const updateAdminProduct = async (productData) => {
+  const res = await fetch(`${API_BASE}/admin/products`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(productData),
+  });
+  const data = await res.json();
+  if (!res.ok) throw new Error(data.message || 'Failed to update product');
+  return data;
+};
+
 export const deleteAdminProduct = async (id) => {
   const res = await fetch(`${API_BASE}/admin/products?id=${id}`, {
     method: 'DELETE',

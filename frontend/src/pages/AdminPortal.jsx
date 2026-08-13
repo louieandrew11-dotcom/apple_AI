@@ -167,6 +167,19 @@ export const AdminPortal = () => {
     }
   };
 
+  const handleEditProductSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const parsedPrice = parseInt(editingProduct.price) || 0;
+      await updateAdminProduct({ ...editingProduct, price: parsedPrice });
+      setEditingProduct(null);
+      showToast("Updated catalog product successfully!");
+      loadPortalData();
+    } catch (err) {
+      alert(err.message || 'Error updating product.');
+    }
+  };
+
   const handleDeleteProduct = async (id) => {
     if (window.confirm("Are you sure you want to remove this item from the catalog?")) {
       try {
@@ -350,6 +363,7 @@ export const AdminPortal = () => {
     { id: 'dashboard', name: 'Overview & Auto Graphs', icon: BarChart3 },
     { id: 'products', name: `Catalog Control (${products.length})`, icon: Package },
     { id: 'chat', name: `Live Staff Chat Desk (${chatThreads.length})`, icon: Sparkles },
+    { id: 'inbox', name: `Support Inbox (${supportTickets.length})`, icon: Inbox },
     { id: 'reviews', name: `Customer Reviews (${reviews.length})`, icon: MessageSquare },
     { id: 'stores', name: `Store Operations (${storeLocations.length})`, icon: Store },
     { id: 'staff', name: `Staff & Payroll (${staff.length})`, icon: Users },
@@ -707,13 +721,22 @@ export const AdminPortal = () => {
 
                   <div className="flex items-center justify-between pt-2 border-t border-white/10 text-xs">
                     <span className="text-[10px] text-gray-400 font-mono">ID: {p.id}</span>
-                    <button
-                      onClick={() => handleDeleteProduct(p.id)}
-                      className="p-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 text-xs flex items-center space-x-1 transition-colors"
-                    >
-                      <Trash2 size={14} />
-                      <span>Delete</span>
-                    </button>
+                    <div className="flex space-x-2">
+                      <button
+                        onClick={() => setEditingProduct(p)}
+                        className="p-1.5 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 text-blue-400 text-xs flex items-center space-x-1 transition-colors"
+                      >
+                        <Edit size={14} />
+                        <span>Edit</span>
+                      </button>
+                      <button
+                        onClick={() => handleDeleteProduct(p.id)}
+                        className="p-1.5 rounded-lg bg-red-500/10 hover:bg-red-500/20 text-red-400 text-xs flex items-center space-x-1 transition-colors"
+                      >
+                        <Trash2 size={14} />
+                        <span>Delete</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -1162,6 +1185,73 @@ export const AdminPortal = () => {
         </motion.div>
       )}
 
+      {/* TAB 10: SUPPORT INBOX */}
+      {activeTab === 'inbox' && (
+        <div className="space-y-6">
+          <div className="flex items-center justify-between border-b border-white/10 pb-4">
+            <div>
+              <h3 className="font-bold text-base text-white flex items-center gap-2">
+                <Inbox className="w-5 h-5 text-purple-400" />
+                Customer Support Messages
+              </h3>
+              <p className="text-xs text-gray-400">
+                Inquiries submitted via the storefront Contact Us page.
+              </p>
+            </div>
+            <div className="px-3 py-1.5 rounded-xl bg-purple-500/10 text-purple-400 font-mono text-xs font-bold border border-purple-500/20">
+              Total Messages: {supportTickets.length}
+            </div>
+          </div>
+
+          <div className="grid gap-4">
+            {supportTickets.length === 0 ? (
+              <div className="text-center py-10 text-gray-500 text-sm font-mono border border-white/5 rounded-2xl bg-black/20">
+                No support messages found.
+              </div>
+            ) : (
+              supportTickets.map((msg, i) => (
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                  key={msg.ticketId || msg._id || i}
+                  className="glass-card rounded-2xl p-5 border border-white/10 space-y-3"
+                >
+                  <div className="flex justify-between items-start border-b border-white/10 pb-3">
+                    <div>
+                      <h4 className="font-bold text-white flex items-center space-x-2">
+                        <span>{msg.name}</span>
+                        <span className="text-[10px] uppercase bg-white/10 px-2 py-0.5 rounded-full text-gray-300">
+                          {msg.email}
+                        </span>
+                      </h4>
+                      <p className="text-xs font-mono text-purple-400 mt-1">Ticket ID: {msg.ticketId}</p>
+                    </div>
+                    <span className="text-[10px] text-gray-400 font-mono">
+                      {msg.createdAt ? new Date(msg.createdAt).toLocaleString() : 'N/A'}
+                    </span>
+                  </div>
+
+                  <div>
+                    <h5 className="text-xs font-bold text-gray-300 mb-1 uppercase tracking-wider">Subject</h5>
+                    <p className="text-sm text-white font-medium bg-black/30 p-2.5 rounded-lg border border-white/5">
+                      {msg.subject}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h5 className="text-xs font-bold text-gray-300 mb-1 uppercase tracking-wider">Message</h5>
+                    <p className="text-sm text-gray-300 leading-relaxed bg-black/30 p-3 rounded-lg border border-white/5 whitespace-pre-wrap">
+                      {msg.message}
+                    </p>
+                  </div>
+                </motion.div>
+              ))
+            )}
+          </div>
+        </div>
+      )}
+
       {/* MODAL 1: ADD NEW PRODUCT */}
       <AnimatePresence>
         {showAddProductModal && (
@@ -1257,6 +1347,105 @@ export const AdminPortal = () => {
                     className="px-6 py-2 bg-apple-accent hover:bg-apple-accentHover text-white font-bold rounded-xl shadow-lg"
                   >
                     Save Item to MongoDB
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* MODAL 1B: EDIT PRODUCT */}
+      <AnimatePresence>
+        {editingProduct && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-md">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.9 }}
+              className="w-full max-w-lg glass-card rounded-3xl p-6 border border-white/20 shadow-2xl space-y-5"
+            >
+              <div className="flex items-center justify-between border-b border-white/10 pb-3">
+                <h3 className="text-lg font-bold text-white flex items-center gap-2">
+                  <Edit className="w-5 h-5 text-blue-400" />
+                  Edit Catalog Item
+                </h3>
+                <button onClick={() => setEditingProduct(null)} className="text-gray-400 hover:text-white">✕</button>
+              </div>
+
+              <form onSubmit={handleEditProductSubmit} className="space-y-4 text-xs">
+                <div>
+                  <label className="text-gray-300 block mb-1 font-semibold">Item Name</label>
+                  <input
+                    type="text"
+                    required
+                    value={editingProduct.name}
+                    onChange={(e) => setEditingProduct({ ...editingProduct, name: e.target.value })}
+                    className="w-full bg-[#2c2c2e] text-white rounded-xl px-3.5 py-2.5 border border-white/10"
+                  />
+                </div>
+
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="text-gray-300 block mb-1 font-semibold">Category</label>
+                    <select
+                      value={editingProduct.category}
+                      onChange={(e) => setEditingProduct({ ...editingProduct, category: e.target.value })}
+                      className="w-full bg-[#2c2c2e] text-white rounded-xl px-3.5 py-2.5 border border-white/10"
+                    >
+                      <option value="iPhone">iPhone</option>
+                      <option value="Mac">Mac</option>
+                      <option value="iPad">iPad</option>
+                      <option value="Watch">Watch</option>
+                      <option value="AirPods">AirPods</option>
+                      <option value="Accessories">Accessories</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label className="text-gray-300 block mb-1 font-semibold">Base Price (₹)</label>
+                    <input
+                      type="number"
+                      required
+                      value={editingProduct.price}
+                      onChange={(e) => setEditingProduct({ ...editingProduct, price: e.target.value })}
+                      className="w-full bg-[#2c2c2e] text-white rounded-xl px-3.5 py-2.5 border border-white/10"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="text-gray-300 block mb-1 font-semibold">Image URL</label>
+                  <input
+                    type="url"
+                    value={editingProduct.image}
+                    onChange={(e) => setEditingProduct({ ...editingProduct, image: e.target.value })}
+                    className="w-full bg-[#2c2c2e] text-white rounded-xl px-3.5 py-2.5 border border-white/10"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-gray-300 block mb-1 font-semibold">Description</label>
+                  <textarea
+                    rows={3}
+                    value={editingProduct.description}
+                    onChange={(e) => setEditingProduct({ ...editingProduct, description: e.target.value })}
+                    className="w-full bg-[#2c2c2e] text-white rounded-xl px-3.5 py-2.5 border border-white/10"
+                  />
+                </div>
+
+                <div className="flex justify-end gap-3 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setEditingProduct(null)}
+                    className="px-4 py-2 bg-white/10 hover:bg-white/20 text-white font-bold rounded-xl"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    className="px-6 py-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg"
+                  >
+                    Update Item
                   </button>
                 </div>
               </form>
