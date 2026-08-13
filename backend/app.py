@@ -268,6 +268,16 @@ def generate_siri_response(user_message, chat_history=[]):
 
     return "Namaste! I am Siri. How can I help you choose the perfect iPhone today? Ask me about prices in Indian Rupees (₹), camera specs, storage, or trade-in credit."
 
+@app.route('/')
+@app.route('/api')
+@app.route('/api/health')
+def health_check():
+    return jsonify({
+        "status": "healthy",
+        "service": "Apple AI Store API",
+        "routes": ["/api/products", "/api/stores", "/api/contact", "/api/chat", "/api/inbox", "/api/trade-in"]
+    })
+
 @app.route('/api/products', methods=['GET'])
 def get_products():
     category = request.args.get('category')
