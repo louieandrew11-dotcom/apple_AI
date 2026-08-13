@@ -449,17 +449,23 @@ def save_chat_log(chat_data):
             print(f"MongoDB save_chat_log error: {e}")
     return False
 
-def seed_database(db_password=None):
+def seed_database(db_password=None, mongo_uri=None):
     """Seeds products, stores, and messages into MongoDB Atlas."""
-    uri = MONGODB_URI
+    uri = mongo_uri or os.getenv("MONGODB_URI") or ""
     if db_password:
-        uri = f"mongodb+srv://louieandrew11:{db_password}@cluster0.28idf9t.mongodb.net/?retryWrites=true&w=majority"
+        if "<db_password>" in uri:
+            uri = uri.replace("<db_password>", db_password)
+        elif "@" in uri:
+            import re
+            uri = re.sub(r'mongodb\+srv://([^:]+):([^@]+)@', f'mongodb+srv://\\1:{db_password}@', uri)
+        else:
+            uri = f"mongodb+srv://louieandrew11:{db_password}@cluster0.28idf9t.mongodb.net/?retryWrites=true&w=majority"
     
     db = get_mongo_db(uri_override=uri)
     if db is None:
         return {
             "status": "error",
-            "message": "Could not connect to MongoDB Atlas. Please ensure password is set."
+            "message": "Could not connect to MongoDB Atlas. Check your password or paste your full Connection String from cloud.mongodb.com."
         }
 
     # 1. Seed Products

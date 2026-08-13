@@ -277,26 +277,34 @@ def get_products():
     max_price = request.args.get('maxPrice', type=float)
 
     filtered = PRODUCTS_DATA
+    db = get_mongo_db()
+    if db is not None:
+        try:
+            items = list(db['products'].find({}, {'_id': 0}))
+            if items:
+                filtered = items
+        except Exception:
+            pass
 
     if category and category != 'all':
         filtered = [p for p in filtered if p.get('category', '').lower() == category.lower()]
 
     if series and series != 'all':
-        filtered = [p for p in filtered if p['series'].lower() == series.lower()]
+        filtered = [p for p in filtered if p.get('series', '').lower() == series.lower()]
 
     if search:
         filtered = [
             p for p in filtered
-            if search in p['name'].lower()
-            or search in p['description'].lower()
-            or search in p['tagline'].lower()
+            if search in p.get('name', '').lower()
+            or search in p.get('description', '').lower()
+            or search in p.get('tagline', '').lower()
         ]
 
     if min_price is not None:
-        filtered = [p for p in filtered if p['price'] >= min_price]
+        filtered = [p for p in filtered if p.get('price', 0) >= min_price]
 
     if max_price is not None:
-        filtered = [p for p in filtered if p['price'] <= max_price]
+        filtered = [p for p in filtered if p.get('price', 0) <= max_price]
 
     return jsonify({
         "status": "success",
@@ -306,6 +314,14 @@ def get_products():
 
 @app.route('/api/products/<product_id>', methods=['GET'])
 def get_product(product_id):
+    db = get_mongo_db()
+    if db is not None:
+        try:
+            p = db['products'].find_one({"id": product_id}, {'_id': 0})
+            if p:
+                return jsonify({"status": "success", "product": p})
+        except Exception:
+            pass
     product = next((p for p in PRODUCTS_DATA if p['id'] == product_id), None)
     if product:
         return jsonify({"status": "success", "product": product})
@@ -885,15 +901,19 @@ def connect_mongodb_route():
     password = (data.get('password') or data.get('dbPassword') or '').strip()
     uri = (data.get('uri') or data.get('mongoUri') or '').strip()
 
+    if password.startswith("mongodb+srv://") or password.startswith("mongodb://"):
+        uri = password
+        password = None
+
     if not password and not uri:
         return jsonify({"status": "error", "message": "MongoDB password or connection string is required."}), 400
 
     try:
-        res = seed_database(db_password=password if password else None)
+        res = seed_database(db_password=password if password else None, mongo_uri=uri if uri else None)
         if res.get("status") == "success":
             # Save working URI to .env
             env_path = os.path.join(os.path.dirname(__file__), '.env')
-            new_uri = f"mongodb+srv://louieandrew11:{password}@cluster0.28idf9t.mongodb.net/?retryWrites=true&w=majority" if password else uri
+            new_uri = uri if uri else f"mongodb+srv://louieandrew11:{password}@cluster0.28idf9t.mongodb.net/?retryWrites=true&w=majority"
             
             if os.path.exists(env_path):
                 with open(env_path, 'r', encoding='utf-8') as ef:
@@ -911,7 +931,7 @@ def connect_mongodb_route():
                 with open(env_path, 'w', encoding='utf-8') as ef:
                     ef.write("".join(new_lines))
 
-            log_admin_action("MongoDB Atlas Connected", "MongoDB Atlas Cluster0 connected and database seeded")
+            log_admin_action("MongoDB Atlas Connected", "MongoDB Atlas Cluster connected and database seeded")
             return jsonify(res)
         else:
             return jsonify(res), 400
