@@ -130,7 +130,7 @@ export const Home = () => {
                   <button
                     key={idx}
                     onClick={() => {
-                      window.dispatchEvent(new CustomEvent('open-siri'));
+                      window.dispatchEvent(new CustomEvent('open-siri', { detail: { query: chip.query } }));
                     }}
                     className="text-[11px] px-3.5 py-1.5 rounded-full bg-white/10 hover:bg-white/20 text-gray-200 border border-white/15 backdrop-blur-xl transition-all duration-200 hover:border-cyan-400/50 hover:scale-105"
                   >

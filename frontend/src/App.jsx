@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { CartProvider } from './context/CartContext';
@@ -34,12 +34,12 @@ function AppContent() {
 
   const isAdminPage = location.pathname === '/admin' || location.pathname === '/owner';
 
-  const handleLoadingComplete = () => {
+  const handleLoadingComplete = useCallback(() => {
     setIsLoading(false);
     if (!sessionStorage.getItem('has_selected_portal')) {
       setShowGateway(true);
     }
-  };
+  }, []);
 
   const handleCloseGateway = () => {
     sessionStorage.setItem('has_selected_portal', 'true');
@@ -61,7 +61,7 @@ function AppContent() {
             <Route path="/wishlist" element={<Wishlist />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Support />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="/support" element={<Support />} />
             <Route path="/stores" element={<Stores />} />
             <Route path="/staff" element={<StaffPage />} />
@@ -72,6 +72,7 @@ function AppContent() {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/admin" element={<AdminPortal />} />
             <Route path="/owner" element={<AdminPortal />} />
+            <Route path="*" element={<Home />} />
           </Routes>
         </main>
 
