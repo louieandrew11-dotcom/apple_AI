@@ -8,7 +8,7 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  adminLogin, fetchAdminProducts, addAdminProduct, deleteAdminProduct,
+  adminLogin, fetchAdminProducts, addAdminProduct, updateAdminProduct, deleteAdminProduct,
   fetchAdminStaff, addAdminStaff, updateAdminStaffStatus,
   fetchAdminPayments, fetchAdminLogs, fetchProductReviews,
   deleteProductReview, submitProductReview, fetchOwnerProfile, updateOwnerProfile,
@@ -48,6 +48,8 @@ export const AdminPortal = () => {
   // Modals
   const [showAddProductModal, setShowAddProductModal] = useState(false);
   const [newProduct, setNewProduct] = useState({ name: '', category: 'iPhone', price: '', image: '', description: '' });
+  const [editingProduct, setEditingProduct] = useState(null);
+
 
   const [showAddStaffModal, setShowAddStaffModal] = useState(false);
   const [newStaff, setNewStaff] = useState({ name: '', role: 'Senior Apple Specialist', store: 'Apple BKC (Mumbai)', status: 'On Duty', salary: '85000', payday: '1st of month', payStatus: 'Paid' });
